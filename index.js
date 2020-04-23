@@ -15,8 +15,6 @@ var _cliColor = _interopRequireDefault(require("cli-color"));
 
 var _isUrl = _interopRequireDefault(require("is-url"));
 
-var _path = _interopRequireDefault(require("path"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -78,33 +76,27 @@ var Raspa = function Raspa(URL, config) {
             });
 
           case 15:
-            _context.next = 17;
-            return page.screenshot({
-              path: _path["default"].resolve(__dirname, '../dist/screenshot.png')
-            });
-
-          case 17:
             _context.t0 = _pretty["default"];
-            _context.next = 20;
+            _context.next = 18;
             return page.evaluate(function () {
               return document.documentElement.outerHTML;
             });
 
-          case 20:
+          case 18:
             _context.t1 = _context.sent;
             prettyHTML = (0, _context.t0)(_context.t1);
-            _context.next = 24;
+            _context.next = 22;
             return page.close();
 
-          case 24:
-            _context.next = 26;
+          case 22:
+            _context.next = 24;
             return browser.close();
 
-          case 26:
+          case 24:
             console.log("".concat(_cliColor["default"].greenBright('[Raspa]'), " ").concat(_cliColor["default"].yellowBright('content obtained! 👍')));
             return _context.abrupt("return", prettyHTML);
 
-          case 28:
+          case 26:
           case "end":
             return _context.stop();
         }

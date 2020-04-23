@@ -3,7 +3,6 @@ import UserAgent from 'user-agents';
 import pretty from 'pretty';
 import clc from 'cli-color';
 import isUrl from 'is-url';
-import path from 'path'
 
 const Raspa = (URL, config) => {
   if (!isUrl(URL)) {
