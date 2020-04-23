@@ -36,7 +36,7 @@ const Raspa = (URL, config) => {
 
     await page.setUserAgent(new UserAgent().toString())
     await page.goto(URL, { waitUntil: 'networkidle2' });
-    await page.screenshot({ path: path.resolve(__dirname, '../dist/screenshot.png') });
+    // await page.screenshot({ path: path.resolve(__dirname, '../dist/screenshot.png') });
 
     // get HTML content and set a good format 
     const prettyHTML = pretty(await page.evaluate(() => document.documentElement.outerHTML));
